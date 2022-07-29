@@ -12,6 +12,11 @@ from pathlib import Path
 from typing import Iterable, List, Tuple, Dict, Optional
 from typing_extensions import Protocol
 
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
+
+import warnings
+warnings.filterwarnings('ignore')
+
 import tensorflow as tf
 from azureml.core.run import Run
 from dpu_utils.utils import run_and_debug, RichPath
