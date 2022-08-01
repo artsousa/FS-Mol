@@ -19,7 +19,7 @@ dependencies:
   - pip:
       - docopt
       - dpu-utils>=0.2.13
-      - tensorflow>=2.4
+      - tensorflow==2.4
       - tf2-gnn~=2.12.0
       - more-itertools
       - mysql-connector-python==8.0.17

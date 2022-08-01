@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Iterable, List, Tuple, Dict, Optional
 from typing_extensions import Protocol
 
-os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
+#os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -61,13 +61,13 @@ MAML_MODEL_DEFAULT_HYPER_PARAMS = {
     "use_lr_schedule_single_task_optimizers": False,  # no lr schedule in inner loop
     "initial_emb_lr": 0.0005,
     "gnn_lr": 0.0005,
-    "readout_lr": 0.001,
-    "final_mlp_lr": 0.001,  # inner loop learning rates ~ x10 outer loop
+    "readout_lr": 0.0001,
+    "final_mlp_lr": 0.0001,  # inner loop learning rates ~ x10 outer loop
 }
 
 VALIDATION_MODEL_DEFAULT_HYPER_PARAMS = {
-    "optimizer": "adam",  # change to "sgd" for maml as this addresses the inner loop
-    "use_lr_schedule_single_task_optimizers": True,  # default is to allow lr schedules. Set to False for MAML (inner loop)
+    "optimizer": "sgd",  # change to "sgd" for maml as this addresses the inner loop
+    "use_lr_schedule_single_task_optimizers": False,  # default is to allow lr schedules. Set to False for MAML (inner loop)
     "initial_emb_lr": 0.00005,
     "gnn_lr": 0.00005,
     "readout_lr": 0.0001,
