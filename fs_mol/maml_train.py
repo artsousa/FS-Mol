@@ -57,23 +57,25 @@ MAML_MODEL_DEFAULT_HYPER_PARAMS = {
     "gnn_use_inter_layer_layernorm": True,
     "gnn_layer_input_dropout_rate": 0.1,
     "gnn_global_exchange_every_num_layers": 6,
-    "optimizer": "sgd",  # single task optimizer now operates on tasks in inner loop
+    "optimizer": "rmsprop",  # single task optimizer now operates on tasks in inner loop
+    "momentum": 0.05,
+    "rmsprop_rho": 0.9,
     "use_lr_schedule_single_task_optimizers": False,  # no lr schedule in inner loop
     "initial_emb_lr": 0.0005,
     "gnn_lr": 0.0005,
-    "readout_lr": 0.0001,
-    "final_mlp_lr": 0.0001,  # inner loop learning rates ~ x10 outer loop
+    "readout_lr": 0.003,
+    "final_mlp_lr": 0.003,  # inner loop learning rates ~ x10 outer loop
 }
 
 VALIDATION_MODEL_DEFAULT_HYPER_PARAMS = {
     "optimizer": "sgd",  # change to "sgd" for maml as this addresses the inner loop
     "use_lr_schedule_single_task_optimizers": False,  # default is to allow lr schedules. Set to False for MAML (inner loop)
-    "initial_emb_lr": 0.00005,
-    "gnn_lr": 0.00005,
-    "readout_lr": 0.0001,
-    "final_mlp_lr": 0.0001,
+    "initial_emb_lr": 0.00007,
+    "gnn_lr": 0.00007,
+    "readout_lr": 0.0003,
+    "final_mlp_lr": 0.0003,
     "initial_final_lr_ratio": 0.1,  # let's try some warmup
-    "learning_rate_warmup_steps": 10,
+    "learning_rate_warmup_steps": 5,
 }
 
 VALIDATION_SEEDS = (0, 1, 2)
