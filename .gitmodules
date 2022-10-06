@@ -1,3 +1,6 @@
 [submodule "third_party/MAT"]
 	path = third_party/MAT
 	url = https://github.com/ardigen/MAT
+[submodule "meta-learning-qsar"]
+	path = meta-learning-qsar
+	url = https://github.com/artsousa/meta-learning-qsar
