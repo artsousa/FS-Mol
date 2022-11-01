@@ -4,3 +4,6 @@
 [submodule "meta-learning-qsar"]
 	path = meta-learning-qsar
 	url = https://github.com/artsousa/meta-learning-qsar
+[submodule "HowToTrainYourMAMLPytorch"]
+	path = HowToTrainYourMAMLPytorch
+	url = https://github.com/AntreasAntoniou/HowToTrainYourMAMLPytorch
